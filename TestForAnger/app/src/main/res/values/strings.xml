@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">TestForAnger</string>
+
+    <string-array name="string_questions">
+        <item>Временами я не могу справиться с желанием причинить вред другим.</item>
+        <item>Иногда сплетничаю о людях, которых не люблю.</item>
+        <item>Я легко раздражаюсь, но быстро успокаиваюсь.</item>
+        <item>Если меня не попросят по-хорошему, я не выполню. </item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
 </resources>
