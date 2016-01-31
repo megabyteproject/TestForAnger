@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="20sp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/view1"/>
 
     <View

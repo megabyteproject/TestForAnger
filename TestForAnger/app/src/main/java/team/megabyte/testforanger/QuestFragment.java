@@ -45,6 +45,13 @@ public class QuestFragment extends Fragment {
         SELECTED_NO
     }
 
+    @OnClick(R.id.home_button)
+    public void onClickHome(){
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragContainer, new MainFragment())
+                .commit();
+    }
     @OnClick(R.id.ok)
     public void onClickOk(){
         counterQuestions++;
