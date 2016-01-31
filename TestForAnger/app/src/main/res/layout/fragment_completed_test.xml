@@ -3,4 +3,83 @@
     android:id="@+id/rlbackground"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+    <RelativeLayout
+        android:id="@+id/reAgressive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_wolf_aggressive"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/button_agressive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_wolf_aggressive"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/wolf_agressive"
+            android:layout_alignEnd="@+id/wolf_agressive"
+            android:layout_marginBottom="107dp" />
+
+        <ImageView
+            android:id="@+id/wolf_agressive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wolf_aggressive"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reCalm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_wolf_calm"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/wolf_calm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wolf_calm"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp" />
+
+        <Button
+            android:id="@+id/button_calm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_wolf"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="107dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reNeutral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_wolf_calm">
+
+        <ImageView
+            android:id="@+id/wolf_neutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wolf_neutral"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp" />
+
+        <Button
+            android:id="@+id/button_neutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_wolf"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="107dp" />
+
+    </RelativeLayout>
 </RelativeLayout>
