@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragContainer, new MainFragment())
                 .commit();
-
-        throw new RuntimeException("Test crash");
     }
 
     @Override
