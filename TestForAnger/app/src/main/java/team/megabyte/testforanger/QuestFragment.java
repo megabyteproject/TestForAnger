@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +37,8 @@ public class QuestFragment extends Fragment {
     @InjectView(R.id.answer_no_icon)
     ImageView answer_no_icon;
     @InjectView(R.id.answer_yes_icon)
-    ImageView answer_yes_icon
-            ;
+    ImageView answer_yes_icon;
+
     enum EnumSelected {
         NOT_SELECTED_NOTHING,
         SELECTED_YES,
@@ -52,28 +53,28 @@ public class QuestFragment extends Fragment {
                 questionAnswers.get(counterQuestions).setAnswer(false);
             }
             quest_title.setText(getString(R.string.title_which_question, counterQuestions + 1, sizeArrayQuestions));
-            answer_yes_icon.setBackgroundColor(Color.DKGRAY);
-            answer_no_icon.setBackgroundColor(Color.DKGRAY);
+            answer_yes_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
+            answer_no_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
             quest_content.setText(questionAnswers.get(counterQuestions).getQuestion());
             selected = EnumSelected.NOT_SELECTED_NOTHING;
         } else if (counterQuestions >= sizeArrayQuestions){
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragContainer, new CompetedTestFragment())
+                    .replace(R.id.fragContainer, new CompetedTestFragment(questionAnswers))
                     .commit();
         }
     }
 
     @OnClick(R.id.answer_yes)
     public void onClickAnswerYes(){
-        answer_yes_icon.setBackgroundColor(Color.RED);
-        answer_no_icon.setBackgroundColor(Color.DKGRAY);
+        answer_no_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
+        answer_yes_icon.setBackground(getResources().getDrawable(R.drawable.check_not_selected));
         selected = EnumSelected.SELECTED_YES;
     }
     @OnClick(R.id.answer_no)
     public void onClickAnswerNo(){
-        answer_yes_icon.setBackgroundColor(Color.DKGRAY);
-        answer_no_icon.setBackgroundColor(Color.RED);
+        answer_no_icon.setBackground(getResources().getDrawable(R.drawable.check_not_selected));
+        answer_yes_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
         selected = EnumSelected.SELECTED_NO;
     }
     private ArrayList<QuestionAnswer> questionAnswers;
