@@ -23,8 +23,13 @@ public class CompetedTestFragment extends Fragment {
     private int counterAnswer;
     ArrayList<QuestionAnswer> questionAnswers;
 
-    @InjectView(R.id.rlbackground)
-    RelativeLayout rlbackground;
+    @InjectView(R.id.reNeutral)
+    RelativeLayout reNeutral;
+    @InjectView(R.id.reCalm)
+    RelativeLayout reCalm;
+    @InjectView(R.id.reAgressive)
+    RelativeLayout reAgressive;
+
     public CompetedTestFragment(ArrayList<QuestionAnswer> questionAnswers) {
         this.questionAnswers = questionAnswers;
     }
@@ -41,11 +46,17 @@ public class CompetedTestFragment extends Fragment {
                 counterAnswer += 1;
 
         if(counterAnswer < 13) {
-            rlbackground.setBackground(getResources().getDrawable(R.drawable.background_wolf_calm));
+            reCalm.setVisibility(View.VISIBLE);
+            reNeutral.setVisibility(View.GONE);
+            reAgressive.setVisibility(View.GONE);
         } else if(counterAnswer < 27) {
-            rlbackground.setBackground(getResources().getDrawable(R.drawable.background_wolf_neutral));
+            reCalm.setVisibility(View.GONE);
+            reNeutral.setVisibility(View.VISIBLE);
+            reAgressive.setVisibility(View.GONE);
         } else {
-            rlbackground.setBackground(getResources().getDrawable(R.drawable.background_wolf_aggressive));
+            reCalm.setVisibility(View.GONE);
+            reNeutral.setVisibility(View.GONE);
+            reAgressive.setVisibility(View.VISIBLE);
         }
 
         statisticAnger = new ArrayList<Integer>();
