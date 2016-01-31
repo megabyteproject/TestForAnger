@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".MyApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -17,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7f9b0bed83c712f5ad9e7b72ce908221db8f3513" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

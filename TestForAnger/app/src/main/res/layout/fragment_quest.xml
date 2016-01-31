@@ -1,47 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_questions">
 
     <ImageView
         android:id="@+id/home_button"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="@drawable/home_back" />
 
     <TextView
         android:id="@+id/quest_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Вопрос 2134"
-        android:textSize="20sp"
-        />
+        android:textStyle="bold"
+        android:text="@string/title_which_question"
+        android:textSize="25sp"
+        android:layout_below="@+id/home_button" />
 
     <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/black"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/quest_title"/>
 
     <TextView
         android:id="@+id/quest_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Если б тебя ...."
         android:textSize="20sp"
-        />
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/view1"/>
 
     <View
+        android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/black"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="150dp"
+        android:layout_below="@+id/view1" />
 
     <LinearLayout
         android:id="@+id/answer_yes"
@@ -49,20 +55,21 @@
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/view2">
 
         <ImageView
             android:id="@+id/answer_yes_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@android:color/darker_gray"
-            />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/check_selected" />
 
         <TextView
             android:id="@+id/answer_yes_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Да"
+            android:text="@string/yes"
+            android:layout_marginLeft="10dp"
             android:textSize="20sp"/>
 
     </LinearLayout>
@@ -73,24 +80,33 @@
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/answer_yes">
 
         <ImageView
             android:id="@+id/answer_no_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@android:color/darker_gray"
-            />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/check_selected" />
 
         <TextView
             android:id="@+id/answer_no_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Нет"
+            android:text="@string/no"
+            android:layout_marginLeft="10dp"
             android:textSize="20sp"/>
-
     </LinearLayout>
 
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_forest"
+        android:text="Ok"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
 
-
-</LinearLayout>
+</RelativeLayout>
