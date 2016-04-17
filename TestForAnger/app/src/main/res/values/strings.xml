@@ -6,7 +6,10 @@
     <string name="start_test">Начать тест</string>
     <string name="more">Подробнее</string>
     <string name="again">Пройти заново</string>
+    <string name="rate">Оценить</string>
     <string name="exit">Выход</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 
     <string-array name="string_results">
@@ -14,6 +17,13 @@
         <item>Ни рыба ни мясо алрпопсивгшячрмишгвяылочрмиш гвялочc•ми швяочcрми шговачc авма чсшовяx ÷шсо вяашчcо шявачmсит швярxmƒсим шовьxƒ÷с мшоьвятx÷ сшовтяx÷ шсовям x÷ѕcо мявшx÷•см </item>
         <item>Вы злыдень алрпопсивгшячрмишгвяылочрмиш гвялочc•ми швяочcрми шговачc авма чсшовяx ÷шсо вяашчcо шявачmсит швярxmƒсим шовьxƒ÷с мшоьвятx÷ сшовтяx÷ шсовям x÷ѕcо мявшx÷•см </item>
     </string-array>
+
+    <!--Rate App-->
+    <string name="rate_title">Оценить Генератор отмазок</string>
+    <string name="rate_message">Если вам понравилось приложение, пожалуйста оцените его в Google Play! Спасибо за вашу поддержку)</string>
+    <string name="rate_us">Оценить сейчас</string>
+    <string name="rate_no">Нет, спасибо</string>
+    <string name="rate_remind">Напомнить позже</string>
 
     <string-array name="string_questions">
         <item>Если я разозлюсь, то могу ударить кого-нибудь.</item>

@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Appodeal.onResume(this, Appodeal.BANNER);
     }
 
     @Override
@@ -22,11 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fullScreencall();
-
-
-        String appKey = "698c2d3ae72e92560d4e62cb5d6a9503fb1687428bafeaf6";
-        Appodeal.initialize(this, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
-        Appodeal.show(this, Appodeal.INTERSTITIAL);
 
         getFragmentManager()
                 .beginTransaction()
