@@ -13,8 +13,10 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.kobakei.ratethisapp.RateThisApp;
 
 import java.util.ArrayList;
@@ -51,6 +53,8 @@ public class CompetedTestFragment extends Fragment {
     Button buttonCalm;
     @InjectView(R.id.button_agressive)
     Button buttonAgressive;
+
+    InterstitialAd mInterstitialAd;
 
     @OnClick(R.id.home_button)
     public void onClickHome(){
@@ -153,16 +157,48 @@ public class CompetedTestFragment extends Fragment {
         config.setCancelButtonText(R.string.rate_no);
         RateThisApp.init(config);
 
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                beginPlayingGame();
+            }
+        });
+
+        requestNewInterstitial();
+
         return view;
+    }
+
+    private void beginPlayingGame() {
+        getActivity().getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragContainer, new QuestFragment())
+                .commitAllowingStateLoss();
+    }
+
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("SEE_YOUR_LOGCAT_TO_GET_YOUR_DEVICE_ID")
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragContainer, new QuestFragment())
-                    .commit();
+
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            } else {
+                beginPlayingGame();
+            }
+
         }
     };
 

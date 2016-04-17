@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -85,6 +86,8 @@ public class QuestFragment extends Fragment {
                     .beginTransaction()
                     .replace(R.id.fragContainer, ResultTestFragment.instanceFragment(questionAnswers))
                     .commit();
+        }  else {
+            Toast.makeText(getActivity(), "Пожалуйста выберите 'Да' или 'Нет' :)", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -123,11 +126,13 @@ public class QuestFragment extends Fragment {
         quest_content.setText(questionAnswers.get(counterQuestions).getQuestion());
 
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+        Typeface typeAnother = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8398.ttf");
         ok.setText("Ok");
         ok.setTypeface(type);
-        answer_no_text.setTypeface(type);
-        answer_yes_text.setTypeface(type);
-        quest_title.setTypeface(type);
+        answer_no_text.setTypeface(typeAnother);
+        answer_yes_text.setTypeface(typeAnother);
+        quest_title.setTypeface(typeAnother);
+        quest_content.setTypeface(typeAnother);
         return v;
     }
     @Override
