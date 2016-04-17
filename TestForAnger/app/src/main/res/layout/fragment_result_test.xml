@@ -16,10 +16,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_wolf_aggressive"
+            android:text="@string/more"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/wolf_agressive"
             android:layout_alignEnd="@+id/wolf_agressive"
-            android:text="@string/again"
             android:layout_marginBottom="107dp" />
 
         <ImageView
@@ -51,10 +51,11 @@
             android:id="@+id/button_calm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/more"
+            android:textSize="20sp"
             android:background="@drawable/button_wolf"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="@string/again"
             android:layout_marginBottom="107dp" />
 
     </RelativeLayout>
@@ -78,18 +79,30 @@
             android:id="@+id/button_neutral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/more"
             android:background="@drawable/button_wolf"
-            android:text="@string/again"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="107dp" />
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
 
+    <!--<RelativeLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#4000">-->
 
-    <ListView
-        android:id="@+id/result_list_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        <!---->
+
+    <!--</RelativeLayout>-->
 </RelativeLayout>

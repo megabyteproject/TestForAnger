@@ -3,7 +3,6 @@ package team.megabyte.testforanger;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,7 @@ import butterknife.InjectView;
 /**
  * Created by sergey on 30/01/16.
  */
-public class CompetedTestFragment extends Fragment {
+public class ResultTestFragment extends Fragment {
     public static String QUESTIONS_ANSWERS = "QUESTIONS_ANSWERS";
 
     private int sizeArrayQuestions;
@@ -34,8 +33,6 @@ public class CompetedTestFragment extends Fragment {
     RelativeLayout reCalm;
     @InjectView(R.id.reAgressive)
     RelativeLayout reAgressive;
-    @InjectView(R.id.result_list_view)
-    ListView resultListView;
 
     @InjectView(R.id.button_neutral)
     Button buttonNeutral;
@@ -43,9 +40,11 @@ public class CompetedTestFragment extends Fragment {
     Button buttonCalm;
     @InjectView(R.id.button_agressive)
     Button buttonAgressive;
+    @InjectView(R.id.result_text)
+    TextView textResult;
 
-    public static CompetedTestFragment instanceFragment(ArrayList<QuestionAnswer> questionAnswers){
-        CompetedTestFragment competedTestFragment = new CompetedTestFragment();
+    public static ResultTestFragment instanceFragment(ArrayList<QuestionAnswer> questionAnswers){
+        ResultTestFragment competedTestFragment = new ResultTestFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(QUESTIONS_ANSWERS, questionAnswers);
         competedTestFragment.setArguments(bundle);
@@ -57,12 +56,14 @@ public class CompetedTestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         questionAnswers = getArguments().getParcelableArrayList(QUESTIONS_ANSWERS);
 
-        View view = inflater.inflate(R.layout.fragment_completed_test, container, false);
+        View view = inflater.inflate(R.layout.fragment_result_test, container, false);
         ButterKnife.inject(this, view);
 
         buttonNeutral.setOnClickListener(onClickListener);
         buttonCalm.setOnClickListener(onClickListener);
         buttonAgressive.setOnClickListener(onClickListener);
+
+        String[] resultStrings = getResources().getStringArray(R.array.string_results);
 
         counterAnswer = 0;
         for(int  i = 0; i < questionAnswers.size(); i ++)
@@ -73,49 +74,18 @@ public class CompetedTestFragment extends Fragment {
             reCalm.setVisibility(View.VISIBLE);
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.GONE);
+            textResult.setText(resultStrings[0]);
         } else if(counterAnswer < 27) {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.VISIBLE);
             reAgressive.setVisibility(View.GONE);
+            textResult.setText(resultStrings[1]);
         } else {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.VISIBLE);
+            textResult.setText(resultStrings[2]);
         }
-
-        statisticAnger = new ArrayList<Integer>();
-        for(int i = 0; i < 8; i ++)
-            statisticAnger.add(0);
-        sizeArrayQuestions = questionAnswers.size();
-
-        int phisycalAgressive = 0;
-        int indirectAgressive = 0;
-        int irritability = 0;
-        int negativism = 0;
-        int resentment = 0;
-        int suspicion = 0;
-        int verbalAggression = 0;
-        int guilt = 0;
-
-        for (int  i = 0; i < questionAnswers.size(); i ++){
-            switch (i % 8){
-                case 0: if (questionAnswers.get(i).getAnswer()) phisycalAgressive++; break;
-                case 1: if (questionAnswers.get(i).getAnswer()) indirectAgressive++; break;
-                case 2: if (questionAnswers.get(i).getAnswer()) irritability++; break;
-                case 3: if (questionAnswers.get(i).getAnswer()) negativism++; break;
-                case 4: if (questionAnswers.get(i).getAnswer()) resentment++; break;
-                case 5: if (questionAnswers.get(i).getAnswer()) suspicion++; break;
-                case 6: if (questionAnswers.get(i).getAnswer()) verbalAggression++; break;
-                case 7: if (questionAnswers.get(i).getAnswer()) guilt++; break;
-            }
-        }
-
-        int [] resultNumbers = {phisycalAgressive, indirectAgressive, irritability, negativism,
-                resentment, suspicion, verbalAggression, guilt};
-
-        ResultAdapter adapter = new ResultAdapter(resultNumbers);
-        resultListView.setDivider(null);
-        resultListView.setAdapter(adapter);
         return view;
     }
 
@@ -124,11 +94,10 @@ public class CompetedTestFragment extends Fragment {
         public void onClick(View v) {
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragContainer, new MainFragment())
+                    .replace(R.id.fragContainer, CompetedTestFragment.instanceFragment(questionAnswers))
                     .commit();
         }
     };
-
 
 
 }

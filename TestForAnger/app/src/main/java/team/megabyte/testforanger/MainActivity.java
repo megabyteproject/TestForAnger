@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment instanceof MainFragment){
 
         }
-        super.onBackPressed();
+        //super.onBackPressed();
     }
 
     public void fullScreencall() {

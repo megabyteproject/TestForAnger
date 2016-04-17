@@ -68,7 +68,7 @@ public class QuestFragment extends Fragment {
 //        } else if (counterQuestions >= 1){
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragContainer, CompetedTestFragment.instanceFragment(questionAnswers))
+                    .replace(R.id.fragContainer, ResultTestFragment.instanceFragment(questionAnswers))
                     .commit();
         }
     }
