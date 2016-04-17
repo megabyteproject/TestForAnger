@@ -6,6 +6,8 @@
 
 
     <color name="color_button_bright">#e95e1d</color>
+    <color name="color_button_black">#111111</color>
+    <color name="color_button_black_bright">#323639</color>
 
 
 </resources>

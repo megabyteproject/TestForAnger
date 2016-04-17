@@ -3,12 +3,14 @@ package team.megabyte.testforanger;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,6 +46,12 @@ public class QuestFragment extends Fragment {
     ImageView answer_yes_icon;
     @InjectView(R.id.adView)
     AdView mAdView;
+    @InjectView(R.id.ok)
+    Button ok;
+    @InjectView(R.id.answer_yes_text)
+    TextView answer_yes_text;
+    @InjectView(R.id.answer_no_text)
+    TextView answer_no_text;
 
     enum EnumSelected {
         NOT_SELECTED_NOTHING,
@@ -113,6 +121,13 @@ public class QuestFragment extends Fragment {
         for(int i = 0; i < array_question.length; i++)
             questionAnswers.add(new QuestionAnswer(array_question[i], true));
         quest_content.setText(questionAnswers.get(counterQuestions).getQuestion());
+
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+        ok.setText("Ok");
+        ok.setTypeface(type);
+        answer_no_text.setTypeface(type);
+        answer_yes_text.setTypeface(type);
+        quest_title.setTypeface(type);
         return v;
     }
     @Override

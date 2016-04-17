@@ -1,6 +1,7 @@
 package team.megabyte.testforanger;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -66,6 +67,8 @@ public class CompetedTestFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_completed_test, container, false);
         ButterKnife.inject(this, view);
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+
         buttonNeutral.setOnClickListener(onClickListener);
         buttonCalm.setOnClickListener(onClickListener);
         buttonAgressive.setOnClickListener(onClickListener);
@@ -79,14 +82,23 @@ public class CompetedTestFragment extends Fragment {
             reCalm.setVisibility(View.VISIBLE);
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.GONE);
+
+            buttonCalm.setText(getActivity().getResources().getString(R.string.repeat_test));
+            buttonCalm.setTypeface(type);
         } else if(counterAnswer < 27) {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.VISIBLE);
             reAgressive.setVisibility(View.GONE);
+
+            buttonNeutral.setText(getActivity().getResources().getString(R.string.repeat_test));
+            buttonNeutral.setTypeface(type);
         } else {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.VISIBLE);
+
+            buttonAgressive.setText(getActivity().getResources().getString(R.string.repeat_test));
+            buttonAgressive.setTypeface(type);
         }
 
         statisticAnger = new ArrayList<Integer>();
@@ -140,7 +152,7 @@ public class CompetedTestFragment extends Fragment {
         public void onClick(View v) {
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragContainer, new MainFragment())
+                    .replace(R.id.fragContainer, new QuestFragment())
                     .commit();
         }
     };

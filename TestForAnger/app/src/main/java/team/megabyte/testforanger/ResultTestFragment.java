@@ -1,6 +1,7 @@
 package team.megabyte.testforanger;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -59,6 +60,8 @@ public class ResultTestFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_result_test, container, false);
         ButterKnife.inject(this, view);
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+
         buttonNeutral.setOnClickListener(onClickListener);
         buttonCalm.setOnClickListener(onClickListener);
         buttonAgressive.setOnClickListener(onClickListener);
@@ -75,17 +78,29 @@ public class ResultTestFragment extends Fragment {
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.GONE);
             textResult.setText(resultStrings[0]);
+
+
+            buttonCalm.setText(getActivity().getResources().getString(R.string.more));
+            buttonCalm.setTypeface(type);
         } else if(counterAnswer < 27) {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.VISIBLE);
             reAgressive.setVisibility(View.GONE);
             textResult.setText(resultStrings[1]);
+
+            buttonNeutral.setText(getActivity().getResources().getString(R.string.more));
+            buttonNeutral.setTypeface(type);
         } else {
             reCalm.setVisibility(View.GONE);
             reNeutral.setVisibility(View.GONE);
             reAgressive.setVisibility(View.VISIBLE);
             textResult.setText(resultStrings[2]);
+
+            buttonAgressive.setText(getActivity().getResources().getString(R.string.more));
+            buttonAgressive.setTypeface(type);
         }
+
+
         return view;
     }
 

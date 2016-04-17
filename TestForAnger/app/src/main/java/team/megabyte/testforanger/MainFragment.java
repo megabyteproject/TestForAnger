@@ -1,7 +1,9 @@
 package team.megabyte.testforanger;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -43,6 +45,21 @@ public class MainFragment extends Fragment {
                 .commit();
     }
 
+    @OnClick(R.id.other_test)
+    public void onClickRate(){
+        final String appPackageName = getActivity().getPackageName(); // getPackageName() from Context or Activity object
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+        }
+    }
+
+    @OnClick(R.id.exit)
+    public void onClickExit(){
+        getActivity().onBackPressed();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,9 +67,8 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.inject(this, view);
 
-        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/9795.ttf");
-//        start.setText(getActivity().getResources().getString(R.string.start_test));
-        start.setText("Начать тест");
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+        start.setText(getActivity().getResources().getString(R.string.start_test));
         start.setTypeface(type);
 
         otherTest.setText(getActivity().getResources().getString(R.string.rate));

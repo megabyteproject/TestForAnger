@@ -20,6 +20,7 @@
         android:textStyle="bold"
         android:text="@string/title_which_question"
         android:textSize="25sp"
+        android:textColor="@color/color_button_black_bright"
         android:layout_below="@+id/home_button" />
 
     <View
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="20sp"
+        android:textColor="@color/color_button_black_bright"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/view1"/>
 
@@ -71,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yes"
+            android:textColor="@color/color_button_black_bright"
             android:layout_marginLeft="10dp"
             android:textSize="20sp"/>
 
@@ -96,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no"
+            android:textColor="@color/color_button_black_bright"
             android:layout_marginLeft="10dp"
             android:textSize="20sp"/>
     </LinearLayout>
@@ -106,7 +110,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_forest"
         android:text="Ok"
-        android:textSize="20sp"
+        android:textColor="@color/color_button_black"
+        android:textSize="25sp"
         android:layout_above="@+id/adView"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"/>
