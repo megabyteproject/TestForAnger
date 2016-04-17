@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * Created by sergey on 30/01/16.
@@ -49,6 +50,14 @@ public class CompetedTestFragment extends Fragment {
     Button buttonCalm;
     @InjectView(R.id.button_agressive)
     Button buttonAgressive;
+
+    @OnClick(R.id.home_button)
+    public void onClickHome(){
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragContainer, new MainFragment())
+                .commit();
+    }
 
     public static CompetedTestFragment instanceFragment(ArrayList<QuestionAnswer> questionAnswers){
         CompetedTestFragment competedTestFragment = new CompetedTestFragment();
