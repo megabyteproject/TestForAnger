@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_wolf_main">
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,17 +34,21 @@
         android:text="@string/start_test"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:textSize="25sp"
+        android:textColor="@color/color_button_bright"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="89dp" />
 
     <Button
         android:id="@+id/other_test"
         android:background="@drawable/pointer_two_wolf_main"
-        android:text="@string/start_test"
+        android:text="@string/rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/start"
         android:layout_marginLeft="25dp"
+        android:textSize="25sp"
+        android:textColor="@color/color_button_bright"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -54,7 +60,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/other_test"
         android:layout_marginLeft="30dp"
+        android:textSize="25sp"
+        android:textColor="@color/color_button_bright"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

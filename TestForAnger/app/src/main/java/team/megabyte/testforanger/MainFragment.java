@@ -1,15 +1,19 @@
 package team.megabyte.testforanger;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import butterknife.OnClick;
 
 /**
@@ -18,9 +22,17 @@ import butterknife.OnClick;
 public class MainFragment extends Fragment {
 
 
+    @InjectView(R.id.adView)
+    AdView mAdView;
+    @InjectView(R.id.start)
+    Button start;
+    @InjectView(R.id.other_test)
+    Button otherTest;
+    @InjectView(R.id.exit)
+    Button exit;
+
     public MainFragment() {
     }
-
 
     @OnClick(R.id.start)
     public void onClickStart(){
@@ -38,8 +50,25 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.inject(this, view);
 
+        Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/9795.ttf");
+//        start.setText(getActivity().getResources().getString(R.string.start_test));
+        start.setText("Начать тест");
+        start.setTypeface(type);
+
+        otherTest.setText(getActivity().getResources().getString(R.string.rate));
+        otherTest.setTypeface(type);
+
+        exit.setText(getActivity().getResources().getString(R.string.exit));
+        exit.setTypeface(type);
+
         return view;
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
 }

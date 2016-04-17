@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.kobakei.ratethisapp.RateThisApp;
+
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -34,6 +38,8 @@ public class CompetedTestFragment extends Fragment {
     RelativeLayout reAgressive;
     @InjectView(R.id.result_list_view)
     ListView resultListView;
+    @InjectView(R.id.adView)
+    AdView mAdView;
 
     public static CompetedTestFragment instanceFragment(ArrayList<QuestionAnswer> questionAnswers){
         CompetedTestFragment competedTestFragment = new CompetedTestFragment();
@@ -103,8 +109,33 @@ public class CompetedTestFragment extends Fragment {
         ResultAdapter adapter = new ResultAdapter(resultNumbers);
         resultListView.setDivider(null);
         resultListView.setAdapter(adapter);
+
+        RateThisApp.Config config = new RateThisApp.Config(1, 3);
+// Custom title ,message and buttons names
+        config.setTitle(R.string.rate_title);
+        config.setMessage(R.string.rate_message);
+        config.setYesButtonText(R.string.rate_us);
+        config.setNoButtonText(R.string.rate_remind);
+        config.setCancelButtonText(R.string.rate_no);
+        RateThisApp.init(config);
+
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Monitor launch times and interval from installation
+        RateThisApp.onStart(getActivity());
+        // Show a dialog if criteria is satisfied
+        RateThisApp.showRateDialogIfNeeded(getActivity());
+    }
 
 }

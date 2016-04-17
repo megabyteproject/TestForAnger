@@ -1,5 +1,6 @@
 package team.megabyte.testforanger;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
@@ -38,6 +42,8 @@ public class QuestFragment extends Fragment {
     ImageView answer_no_icon;
     @InjectView(R.id.answer_yes_icon)
     ImageView answer_yes_icon;
+    @InjectView(R.id.adView)
+    AdView mAdView;
 
     enum EnumSelected {
         NOT_SELECTED_NOTHING,
@@ -52,6 +58,7 @@ public class QuestFragment extends Fragment {
                 .replace(R.id.fragContainer, new MainFragment())
                 .commit();
     }
+    @SuppressLint("NewApi")
     @OnClick(R.id.ok)
     public void onClickOk(){
         counterQuestions++;
@@ -73,19 +80,23 @@ public class QuestFragment extends Fragment {
         }
     }
 
+    @SuppressLint("NewApi")
     @OnClick(R.id.answer_yes)
     public void onClickAnswerYes(){
         answer_no_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
         answer_yes_icon.setBackground(getResources().getDrawable(R.drawable.check_not_selected));
         selected = EnumSelected.SELECTED_YES;
     }
+    @SuppressLint("NewApi")
     @OnClick(R.id.answer_no)
     public void onClickAnswerNo(){
         answer_no_icon.setBackground(getResources().getDrawable(R.drawable.check_not_selected));
         answer_yes_icon.setBackground(getResources().getDrawable(R.drawable.check_selected));
         selected = EnumSelected.SELECTED_NO;
     }
+
     private ArrayList<QuestionAnswer> questionAnswers;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -103,5 +114,11 @@ public class QuestFragment extends Fragment {
             questionAnswers.add(new QuestionAnswer(array_question[i], true));
         quest_content.setText(questionAnswers.get(counterQuestions).getQuestion());
         return v;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 }
