@@ -65,9 +65,10 @@ public class QuestFragment extends Fragment {
             quest_content.setText(questionAnswers.get(counterQuestions).getQuestion());
             selected = EnumSelected.NOT_SELECTED_NOTHING;
         } else if (counterQuestions >= sizeArrayQuestions){
+//        } else if (counterQuestions >= 1){
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragContainer, new CompetedTestFragment(questionAnswers))
+                    .replace(R.id.fragContainer, CompetedTestFragment.instanceFragment(questionAnswers))
                     .commit();
         }
     }
