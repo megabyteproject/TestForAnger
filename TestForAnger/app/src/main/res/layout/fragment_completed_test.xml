@@ -18,9 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_wolf_aggressive"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/wolf_agressive"
-            android:layout_alignEnd="@+id/wolf_agressive"
             android:textColor="@color/color_button_bright"
             android:textSize="18sp"
             android:text="@string/again"
@@ -31,8 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/wolf_aggressive"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -103,6 +102,7 @@
     <ListView
         android:id="@+id/result_list_view"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_below="@id/home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></ListView>

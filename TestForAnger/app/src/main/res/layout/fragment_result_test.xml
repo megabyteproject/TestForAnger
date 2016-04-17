@@ -16,12 +16,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_wolf_aggressive"
-            android:text="@string/more"
-            android:textSize="22sp"
-            android:textColor="@color/color_button_bright"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/wolf_agressive"
-            android:layout_alignEnd="@+id/wolf_agressive"
+            android:textColor="@color/color_button_bright"
+            android:textSize="18sp"
+            android:text="@string/again"
             android:layout_marginBottom="107dp" />
 
         <ImageView
@@ -29,8 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/wolf_aggressive"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 
     <RelativeLayout
