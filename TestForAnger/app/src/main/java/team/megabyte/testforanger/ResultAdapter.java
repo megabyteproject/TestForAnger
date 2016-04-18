@@ -1,5 +1,7 @@
 package team.megabyte.testforanger;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,11 @@ import android.widget.TextView;
 public class ResultAdapter extends BaseAdapter{
 
     int [] resultNumbers;
+    Context contexts;
 
-    public ResultAdapter(int[] resultNumbers) {
+    public ResultAdapter(Context contexts, int[] resultNumbers) {
         this.resultNumbers = resultNumbers;
+        this.contexts = contexts;
     }
 
     @Override
@@ -36,6 +40,12 @@ public class ResultAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.result_list, parent, false);
         TextView textView = (TextView) view.findViewById(R.id.result_list_text);
+
+
+
+        Typeface typeAnother = Typeface.createFromAsset(contexts.getAssets(), "fonts/8398.ttf");
+        textView.setTypeface(typeAnother);
+
         String text = "";
         switch (position){
             case 0: text = "Физическая агрессия"; break;

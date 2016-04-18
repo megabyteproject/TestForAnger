@@ -144,7 +144,7 @@ public class CompetedTestFragment extends Fragment {
         int [] resultNumbers = {phisycalAgressive, indirectAgressive, irritability, negativism,
                 resentment, suspicion, verbalAggression, guilt};
 
-        ResultAdapter adapter = new ResultAdapter(resultNumbers);
+        ResultAdapter adapter = new ResultAdapter(getActivity(), resultNumbers);
         resultListView.setDivider(null);
         resultListView.setAdapter(adapter);
 
@@ -159,7 +159,7 @@ public class CompetedTestFragment extends Fragment {
 
 
         mInterstitialAd = new InterstitialAd(getActivity());
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-5534695259936833/8187237908");
 
         mInterstitialAd.setAdListener(new AdListener() {
             @Override

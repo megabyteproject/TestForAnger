@@ -12,6 +12,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -34,6 +37,8 @@ public class ResultTestFragment extends Fragment {
     RelativeLayout reCalm;
     @InjectView(R.id.reAgressive)
     RelativeLayout reAgressive;
+    @InjectView(R.id.adView)
+    AdView mAdView;
 
     @InjectView(R.id.button_neutral)
     Button buttonNeutral;
@@ -61,6 +66,8 @@ public class ResultTestFragment extends Fragment {
         ButterKnife.inject(this, view);
 
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8408.ttf");
+        Typeface typeAnother = Typeface.createFromAsset(getActivity().getAssets(), "fonts/8398.ttf");
+        textResult.setTypeface(typeAnother);
 
         buttonNeutral.setOnClickListener(onClickListener);
         buttonCalm.setOnClickListener(onClickListener);
@@ -114,5 +121,11 @@ public class ResultTestFragment extends Fragment {
         }
     };
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
 
 }

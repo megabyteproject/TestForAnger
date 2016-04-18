@@ -57,7 +57,7 @@ public class MainFragment extends Fragment {
 
     @OnClick(R.id.exit)
     public void onClickExit(){
-        getActivity().onBackPressed();
+        getActivity().finish();
     }
 
     @Nullable
@@ -79,7 +79,6 @@ public class MainFragment extends Fragment {
 
         return view;
     }
-
 
     @Override
     public void onResume() {
