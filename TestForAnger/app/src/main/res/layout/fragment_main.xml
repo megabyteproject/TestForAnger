@@ -6,64 +6,51 @@
     android:background="@drawable/background_wolf_main">
 
     <ImageView
+        android:id="@+id/wolf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/wolf_main"
-        android:layout_alignBottom="@+id/linearLayout"
-        android:layout_marginBottom="40dp"
         android:layout_marginRight="80dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/imageView" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/linearLayout">
+        android:layout_above="@+id/adView"/>
 
-    </LinearLayout>
 
     <Button
         android:id="@+id/start"
         android:background="@drawable/pointer_one_wolf_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
         android:text="@string/start_test"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:textColor="@color/color_button_bright"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="89dp"/>
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/other_test"/>
 
     <Button
         android:id="@+id/other_test"
         android:background="@drawable/pointer_two_wolf_main"
         android:text="@string/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/start"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/exit"
         android:layout_marginLeft="25dp"
         android:textSize="19sp"
-        android:textColor="@color/color_button_bright"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/color_button_bright" />
 
     <Button
         android:id="@+id/exit"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
         android:background="@drawable/pointer_three_wolf_main"
         android:text="@string/exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/other_test"
         android:layout_marginLeft="30dp"
         android:textSize="20sp"
         android:textColor="@color/color_button_bright"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/adView"
+        android:layout_marginBottom="20dp"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

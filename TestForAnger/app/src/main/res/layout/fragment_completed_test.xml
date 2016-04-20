@@ -15,8 +15,8 @@
 
         <Button
             android:id="@+id/button_agressive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
             android:background="@drawable/button_wolf_aggressive"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
@@ -52,8 +52,8 @@
 
         <Button
             android:id="@+id/button_calm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
             android:background="@drawable/button_wolf"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -80,8 +80,8 @@
 
         <Button
             android:id="@+id/button_neutral"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
             android:background="@drawable/button_wolf"
             android:text="@string/again"
             android:textSize="18sp"

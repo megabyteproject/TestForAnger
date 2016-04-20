@@ -48,14 +48,14 @@ public class ResultAdapter extends BaseAdapter{
 
         String text = "";
         switch (position){
-            case 0: text = "Физическая агрессия"; break;
-            case 1: text = "Косвенная агрессия"; break;
-            case 2: text = "Раздражительность"; break;
-            case 3: text = "Негативизм"; break;
-            case 4: text = "Обидчивость"; break;
-            case 5: text = "Подозрительность"; break;
-            case 6: text = "Вербальная агрессия"; break;
-            case 7: text = "Чувство вины"; break;
+            case 0: text = contexts.getString(R.string.physic_aggression); break;
+            case 1: text = contexts.getString(R.string.indirect_aggression); break;
+            case 2: text = contexts.getString(R.string.temper); break;
+            case 3: text = contexts.getString(R.string.negativism); break;
+            case 4: text = contexts.getString(R.string.touchiness); break;
+            case 5: text = contexts.getString(R.string.suspicion); break;
+            case 6: text = contexts.getString(R.string.verbal_aggression); break;
+            case 7: text = contexts.getString(R.string.guilt); break;
         }
         textView.setText(text + ": " + resultNumbers[position] * 20 + "%");
         return view;

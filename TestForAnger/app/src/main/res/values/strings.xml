@@ -1,72 +1,82 @@
 <resources>
-    <string name="app_name">Тест на злость</string>
-    <string name="yes">Да</string>
-    <string name="no">Нет</string>
-    <string name="title_which_question">Вопрос %1$d из %2$d</string>
-    <string name="start_test">Начать тест</string>
-    <string name="more">Подробнее</string>
-    <string name="repeat_test">Пройти заново</string>
-    <string name="again">Пройти заново</string>
-    <string name="rate">Оценить</string>
-    <string name="exit">Выход</string>
+    <string name="app_name">Test for Anger</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_which_question">Question %1$d from %2$d</string>
+    <string name="start_test">Start test</string>
+    <string name="more">More</string>
+    <string name="repeat_test">Restart</string>
+    <string name="again">Restart</string>
+    <string name="rate">Rate</string>
+    <string name="exit">Exit</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-5534695259936833/6710504708</string>
     <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
 
 
     <string-array name="string_results">
-        <item>Вы очень спокойны и чтобы Вас вывести нужно очень постараться, но даже у Вашего терпения есть предел :)</item>
-        <item>В целом, Вы довольно спокойны, но когда люди с завидным постоянством начинают Вас раздражать, Вы покажете им, что они сильно заблуждались, считая Вас тихоней, которая все стерпит :)</item>
-        <item>Вы дьявол во плоти. Человек, который пытается Вас выбесить, подписывает себе смертный приговор. Вы покажете ему все на что способны! И не отступите, пока не спляшете на его костях!!!</item>
+        <item>You are very calm:)</item>
+        <item>In general, you are pretty calm:)</item>
+        <item>You are the devil in the flesh.:/</item>
     </string-array>
 
     <!--Rate App-->
-    <string name="rate_title">Оценить Генератор отмазок</string>
-    <string name="rate_message">Если вам понравилось приложение, пожалуйста оцените его в Google Play! Спасибо за вашу поддержку)</string>
-    <string name="rate_us">Оценить сейчас</string>
-    <string name="rate_no">Нет, спасибо</string>
-    <string name="rate_remind">Напомнить позже</string>
+    <string name="rate_title">Rate Test for Anger</string>
+    <string name="rate_message">If you love our app, please take a moment to rate it</string>
+    <string name="rate_us">Rate now</string>
+    <string name="rate_no">No, thanks</string>
+    <string name="rate_remind">Remind later</string>
+
+
+    <string name="physic_aggression">Physical aggression</string>
+    <string name="indirect_aggression">Indirect aggression</string>
+    <string name="temper">Temper</string>
+    <string name="negativism">Negativism</string>
+    <string name="touchiness">Touchiness</string>
+    <string name="suspicion">Suspicion</string>
+    <string name="verbal_aggression">Verbal aggression</string>
+    <string name="guilt">Guilt</string>
 
     <string-array name="string_questions">
-        <item>Если я разозлюсь, то могу ударить кого-нибудь.</item>
-        <item>Я никогда не раздражась настолько, чтобы кидаться предметами.</item>
-        <item>Я легко раздражаюсь, но быстро успокаиваюсь.</item>
-        <item>Если меня не попросят по-хорошему, я не выполню просьбу.</item>
-        <item>Мне кажется, что судьба ко мне несправедлива.</item>
-        <item>Я знаю, что люди говорят обо мне за спиной.</item>
-        <item>Я не могу удержаться от спора, если люди не согласны со мной.</item>
-        <item>Если мне случалось обмануть кого-нибудь, я испытывал(а) мучительные угрызения совести.</item>
-        <item>Мне кажется, что я не способен ударить человека.</item>
-        <item>Когда я раздражаюсь, то хлопаю дверьми.</item>
-        <item>Иногда люди раздражают меня просто своим присутствием.</item>
-        <item>Если мне не нравится установленное правило, мне хочется его нарушить.</item>
-        <item>Иногда меня гложет зависть, хотя я этого не показываю.</item>
-        <item>Я думаю, что многие люди не любят меня.</item>
-        <item>Я требую, чтобы люди уважали мои права.</item>
-        <item>Иногда мне на ум приходят мысли, которых я стыжусь.</item>
-        <item>Я знаю людей, которые способны довести меня до драки.</item>
-        <item>Иногда я выражаю гнев тем, что стучу кулаком по столу.</item>
-        <item>Я часто чувствую себя как пороховая бочка, готовая взорваться.</item>
-        <item>Если кто-то корчит из себя начальника, я всегда поступаю ему наперекор.</item>
-        <item>Нет людей, которых я по-настоящему ненавидел бы.</item>
-        <item>Довольно много людей мне завидуют.</item>
-        <item>Даже если я злюсь, то не прибегаю к «сильным» выражениям.</item>
-        <item>Люди, увиливающие от работы, должны испытывать чувство вины.</item>
-        <item>Я редко даю сдачи, даже если кто-то ударит меня.</item>
-        <item>Я могу вспомнить случай, когда был так зол, что хватал первый попавшийся предмет и ломал его.</item>
-        <item>Я бываю грубоват по отношению к людям, которые мне не нравятся.</item>
-        <item>Когда со мной разговаривают командным тоном, мне ничего не хочется делать.</item>
-        <item>Обычно я стараюсь скрывать плохое отношение к людям.</item>
-        <item>Иногда мне кажется, что надо мной смеются.</item>
-        <item>Если кто-то раздражает меня, я готов сказать все, что я о нем думаю.</item>
-        <item>Меня угнетает то, что я мало делаю для своих родителей.</item>
-        <item>Если кто-то первым ударит меня, я не отвечу ему.</item>
-        <item>В споре я часто повышаю голос.</item>
-        <item>Я не раздражаюсь из-за мелочей.</item>
-        <item>Когда люди корчат из себя начальника, я делаю все, чтобы они не зазнавались.</item>
-        <item>Я не всегда получаю то хорошее, чего заслуживаю.</item>
-        <item>У меня нет врагов, которые хотели бы мне навредить.</item>
-        <item>Я часто угрожаю людям, хотя и не собираюсь приводить угрозы в исполнение.</item>
-        <item>Я делаю много такого, о чем впоследствии жалею.</item>
+        <item>If I get angry, I can hit somebody.</item>
+        <item>I never get angry enough to throw objects.</item>
+        <item>I easily get angry, but quickly calmed down.</item>
+        <item>I do not always comply with requests.</item>
+        <item>It seems to me that the fate of me is unfair.</item>
+        <item>I know that people talk about me behind my back.</item>
+        <item>I can not resist the dispute, if people do not agree with me.</item>
+        <item>If I happened to deceive anyone, I felt painful remorse.</item>
+        <item>It seems to me that I was not able to hit the man.</item>
+        <item>When I get angry, then I slam the door.</item>
+        <item>Sometimes people just annoy me with their presence.</item>
+        <item>If I do not like a rule set, I want to break it.</item>
+        <item>Sometimes I envy gnaws at, although I do not show.</item>
+        <item>I think many people do not like me.</item>
+        <item>I demand that people respect my rights.</item>
+        <item>Sometimes I come to mind thoughts, which I am ashamed.</item>
+        <item>I know people who can bring me to a fight.</item>
+        <item>Sometimes I express the anger that banging his fist on the table.</item>
+        <item>I often feel like a powder keg ready to explode.</item>
+        <item>If someone poses as a chief, I am always doing it in defiance.</item>
+        <item>None of the people I really would hate.</item>
+        <item>Quite a lot of people envy me.</item>
+        <item>Even if I am angry, I do not resort to "strong" expressions.</item>
+        <item>People who shirk work, should feel guilty.</item>
+        <item>I rarely going to fight, even if someone hit me.</item>
+        <item>I can remember the case when I was so angry that he grabbed the first available object and broke it.</item>
+        <item>I am rude towards people who do not like me.</item>
+        <item>When talking with me commanding tone, I do not want to do.</item>
+        <item>I usually try to hide a bad attitude towards people.</item>
+        <item>Sometimes it seems to me that people laugh at me.</item>
+        <item>If someone annoys me, I am ready to say what I think about him.</item>
+        <item>It depresses me what I am not doing enough for my parents.</item>
+        <item>If someone hit me first, I did not answer him.</item>
+        <item>When I m disputing, I often raise my voice.</item>
+        <item>I do not get angry over small things.</item>
+        <item>When people from pretending themselves superior, I do all that they are not conceited.</item>
+        <item>I don not always get something good, that I deserve.</item>
+        <item>I do not have enemies who want to harm me.</item>
+        <item>I often threaten people, but not going to result in the threat of execution.</item>
+        <item>I do a lot of this, as later regret.</item>
     </string-array>
 </resources>

@@ -148,7 +148,7 @@ public class CompetedTestFragment extends Fragment {
         resultListView.setDivider(null);
         resultListView.setAdapter(adapter);
 
-        RateThisApp.Config config = new RateThisApp.Config(1, 3);
+        RateThisApp.Config config = new RateThisApp.Config(1, 5);
 // Custom title ,message and buttons names
         config.setTitle(R.string.rate_title);
         config.setMessage(R.string.rate_message);

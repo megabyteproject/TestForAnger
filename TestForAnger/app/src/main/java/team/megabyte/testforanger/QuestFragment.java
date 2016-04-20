@@ -70,7 +70,8 @@ public class QuestFragment extends Fragment {
     @SuppressLint("NewApi")
     @OnClick(R.id.ok)
     public void onClickOk(){
-        counterQuestions++;
+        if(selected != EnumSelected.NOT_SELECTED_NOTHING)
+            counterQuestions++;
         if(counterQuestions < sizeArrayQuestions && selected != EnumSelected.NOT_SELECTED_NOTHING) {
             if(EnumSelected.SELECTED_NO == selected) {
                 questionAnswers.get(counterQuestions).setAnswer(false);
@@ -86,8 +87,6 @@ public class QuestFragment extends Fragment {
                     .beginTransaction()
                     .replace(R.id.fragContainer, ResultTestFragment.instanceFragment(questionAnswers))
                     .commit();
-        }  else {
-            Toast.makeText(getActivity(), "Пожалуйста выберите 'Да' или 'Нет' :)", Toast.LENGTH_SHORT).show();
         }
     }
 
