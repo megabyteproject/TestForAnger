@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.appodeal.ads.Appodeal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fullScreencall();
+
+//        String appKey = "c3506c6d9100be58e9bc2abd526e18b4507b88cd99682373";
+//        Appodeal.initialize(this, appKey, Appodeal.BANNER | Appodeal.INTERSTITIAL);
+//
+//        Appodeal.show(this, Appodeal.NON_SKIPPABLE_VIDEO);
 
         getFragmentManager()
                 .beginTransaction()
